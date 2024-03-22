@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int calcularValor(string mensaje) {
+    unordered_map<char, int tablaValores = {
+        {'a', 1}, {'e', 1},
+        {'o', 2}, {'s', 2},
+        {'d', 3}, {'i', 3}, {'n', 3}, {'r', 3},
+        {'c', 4}, {'l', 4}, {'t', 4}, {'u', 4},
+        {'m', 5}, {'p', 5},
+        {'b', 6}, {'f', 6}, {'g', 6}, {'h', 6}, {'j', 6}, {'q', 6}, {'v', 6}, {'x', 6}, {'y', 6}, {'z', 6},
+        {'k', 7}, {'w', 7}
+    };
+
+    int valorTotal = 0;
+    for (char letra : mensaje) {
+        if (tablaValores.find(tolower(letra)) != tablaValores.end()) {
+            valorTotal += tablaValores[tolower(letra)];
+        }
+    }
+
+    return valorTotal;
+}
+
+int main() {
+    string mensaje;
+    cout << "Ingrese el mensaje: ";
+    getline(cin, mensaje);
+    int valor = calcularValor(mensaje);
+    cout << "El valor del mensaje es: " << valor << endl;
+    return 0;
+}
