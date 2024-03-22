@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int ContarLetraA(string f) {
+    int contador = 0;
+    for (char letra : f) {
+        if (tolower(letra) == 'a') { 
+            contador++;
+        }
+    }
+    return contador;
+}
+
+int main() {
+    string frase;
+    cout << "Ingrese una frase: ";
+    getline(cin, frase);
+
+    int cantidad_de_a = ContarLetraA(frase);
+    cout << "La cantidad de letras 'a' en la frase es: " << cantidad_de_a << endl;
+
+    return 0;
