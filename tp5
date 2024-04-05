@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+string konnichiwa(string nombre) {
+    string N;
+    string comienzo;
+	string finalizado; 
+	string completado;
+        for (int i = 0; i < nombre.size(); i++) {
+        if (nombre[i] != 'a' && nombre[i] != 'e' && nombre[i] != 'i' && nombre[i] != 'o' && nombre[i] != 'u'&& nombre[i] != ' ') {
+            N += nombre[i];
+            if (i < nombre.size() + 1 && nombre[i + 1] != 'a' && nombre[i + 1] != 'e' && nombre[i + 1] != 'i' && nombre[i + 1] != 'o' && nombre[i + 1] != 'u'&& nombre[i + 1] != ' ') {
+                N += 'u';
+            }
+        } else {
+            N += nombre[i];
+        }
+    } 
+    
+     comienzo="Konnichiwa ";
+	 finalizado="-san" ;
+	completado=comienzo+N+finalizado;
+    return completado;
+}
